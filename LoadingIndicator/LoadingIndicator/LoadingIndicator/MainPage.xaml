@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:loadingIndicator="clr-namespace:LoadingIndicator;assembly=LoadingIndicator"
+             x:Class="LoadingIndicator.MainPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <loadingIndicator:LoadingRing x:Name="LoadingRing" Grid.Row="0" Color="Red" HeightRequest="100" WidthRequest="100" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></loadingIndicator:LoadingRing>
+
+        <Button x:Name="ShowLoadingButton" Grid.Row="1" Text="Show Loading Ring" Margin="6" ></Button>
+
+    </Grid>
+</ContentPage>
