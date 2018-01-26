@@ -13,16 +13,16 @@ namespace LoadingIndicator
             switch (Device.RuntimePlatform)
             {
                 case Device.UWP:
-                    UwpProgressRing = new ProgressRingIndicator();
-                    UwpProgressRing.HorizontalOptions = LayoutOptions.FillAndExpand;
-                    UwpProgressRing.VerticalOptions = LayoutOptions.FillAndExpand;
-                    this.Content = UwpProgressRing;
+                    this.UwpProgressRing = new ProgressRingIndicator();
+                    this.UwpProgressRing.HorizontalOptions = LayoutOptions.FillAndExpand;
+                    this.UwpProgressRing.VerticalOptions = LayoutOptions.FillAndExpand;
+                    this.Content = this.UwpProgressRing;
                     break;
                 default:
-                    ActivityIndicator = new ActivityIndicator();
-                    ActivityIndicator.HorizontalOptions = LayoutOptions.FillAndExpand;
-                    ActivityIndicator.VerticalOptions = LayoutOptions.FillAndExpand;
-                    this.Content = ActivityIndicator;
+                    this.ActivityIndicator = new ActivityIndicator();
+                    this.ActivityIndicator.HorizontalOptions = LayoutOptions.FillAndExpand;
+                    this.ActivityIndicator.VerticalOptions = LayoutOptions.FillAndExpand;
+                    this.Content = this.ActivityIndicator;
                     break;
             }
 
@@ -92,10 +92,6 @@ namespace LoadingIndicator
             get => (bool)GetValue(IsRunningProperty);
             set => SetValue(IsRunningProperty, value);
         }
-
-
-
-
 
     }
 

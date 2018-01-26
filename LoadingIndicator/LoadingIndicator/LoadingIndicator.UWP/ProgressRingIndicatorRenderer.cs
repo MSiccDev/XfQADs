@@ -6,7 +6,6 @@ using LoadingIndicator.UWP;
 using Xamarin.Forms.Platform.UWP;
 
 [assembly: ExportRenderer(typeof(ProgressRingIndicator), typeof(ProgressRingIndicatorRenderer))]
-
 namespace LoadingIndicator.UWP
 {
     public class ProgressRingIndicatorRenderer : ViewRenderer<ProgressRingIndicator, ProgressRing>
@@ -23,13 +22,10 @@ namespace LoadingIndicator.UWP
 
             if (e.NewElement != null)
             {
-                _progressRing.IsActive = e.NewElement.IsRunning;
-                _progressRing.Visibility = e.NewElement.IsRunning ? Visibility.Visible : Visibility.Collapsed;
-                var xfColor = e.NewElement.Color;
+                _progressRing.IsActive = this.Element.IsRunning;
+                _progressRing.Visibility = this.Element.IsRunning ? Visibility.Visible : Visibility.Collapsed;
+                var xfColor = this.Element.Color;
                 _progressRing.Foreground = xfColor.ToUwpSolidColorBrush();
-
-                _progressRing.Height = e.NewElement.HeightRequest > 0 ? e.NewElement.HeightRequest : 20;
-                _progressRing.Width = e.NewElement.WidthRequest > 0 ? e.NewElement.WidthRequest : 20;
 
                 SetNativeControl(_progressRing);
             }
@@ -41,27 +37,26 @@ namespace LoadingIndicator.UWP
 
             if (e.PropertyName == nameof(ProgressRingIndicator.Color))
             {
-                _progressRing.Foreground = Element.Color.ToUwpSolidColorBrush();
+                _progressRing.Foreground = this.Element.Color.ToUwpSolidColorBrush();
             }
 
             if (e.PropertyName == nameof(ProgressRingIndicator.IsRunning))
             {
-                _progressRing.IsActive = Element.IsRunning;
-                _progressRing.Visibility = Element.IsRunning ? Visibility.Visible : Visibility.Collapsed;
+                _progressRing.IsActive = this.Element.IsRunning;
+                _progressRing.Visibility = this.Element.IsRunning ? Visibility.Visible : Visibility.Collapsed;
             }
 
             if (e.PropertyName == nameof(ProgressRingIndicator.WidthRequest))
             {
-                _progressRing.Width = Element.WidthRequest > 0 ? Element.WidthRequest : 20;
+                _progressRing.Width = this.Element.WidthRequest > 0 ? this.Element.WidthRequest : 20;
                 UpdateNativeControl();
             }
 
             if (e.PropertyName == nameof(ProgressRingIndicator.HeightRequest))
             {
-                _progressRing.Height = Element.HeightRequest > 0 ? Element.HeightRequest : 20;
+                _progressRing.Height = this.Element.HeightRequest > 0 ? this.Element.HeightRequest : 20;
                 UpdateNativeControl();
             }
         }
     }
-
 }
