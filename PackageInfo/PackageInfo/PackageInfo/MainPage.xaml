@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PackageInfo"
+             x:Class="PackageInfo.MainPage">
+
+    <StackLayout Margin="0,36,0,0">
+        <Label x:Name="VersionLabel" Grid.Row="0" FontSize="24" Margin="6"></Label>
+        <Label x:Name="VersionNameLabel" Grid.Row="0" FontSize="24" Margin="6"></Label>
+        <Label x:Name="PackageIdLabel" Grid.Row="1" FontSize="24" Margin="6"></Label>
+    </StackLayout>
+
+</ContentPage>
