@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MaxLinesLabel"
+             x:Class="MaxLinesLabel.MainPage">
+
+    <Grid>
+        <Grid.Margin>
+            <OnPlatform x:TypeArguments="Thickness">
+                <On Platform="Android, UWP" Value="6"></On>
+                <On Platform="iOS" Value="6,20,6,6"></On>
+            </OnPlatform>
+        </Grid.Margin>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Text="MaxLinesLabel Demo" FontSize="Large" FontAttributes="Bold" Margin="6" Grid.Row="0"></Label>
+
+        <local:XfMaxLinesLabel Grid.Row="1" Margin="6" MaxLines="2" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis ipsum mollis velit porta tempor pharetra quis diam. Vestibulum nulla felis, cursus at laoreet mattis, interdum eget est. Donec ultrices tellus a lobortis cursus. Proin et arcu a ligula euismod vulputate. Donec in turpis est. Cras dignissim semper lacus, eget dignissim ex porttitor quis. Mauris id feugiat velit. Aenean ornare, tellus vitae volutpat lacinia, purus odio placerat risus, at maximus purus purus sit amet augue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."/>
+
+        <local:XfMaxLinesLabel Grid.Row="2" Margin="6" MaxLines="4" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis ipsum mollis velit porta tempor pharetra quis diam. Vestibulum nulla felis, cursus at laoreet mattis, interdum eget est. Donec ultrices tellus a lobortis cursus. Proin et arcu a ligula euismod vulputate. Donec in turpis est. Cras dignissim semper lacus, eget dignissim ex porttitor quis. Mauris id feugiat velit. Aenean ornare, tellus vitae volutpat lacinia, purus odio placerat risus, at maximus purus purus sit amet augue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."/>
+
+        <local:XfMaxLinesLabel Grid.Row="3" Margin="6" MaxLines="1" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis ipsum mollis velit porta tempor pharetra quis diam. Vestibulum nulla felis, cursus at laoreet mattis, interdum eget est. Donec ultrices tellus a lobortis cursus. Proin et arcu a ligula euismod vulputate. Donec in turpis est. Cras dignissim semper lacus, eget dignissim ex porttitor quis. Mauris id feugiat velit. Aenean ornare, tellus vitae volutpat lacinia, purus odio placerat risus, at maximus purus purus sit amet augue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."/>
+
+
+    </Grid>
+
+</ContentPage>
